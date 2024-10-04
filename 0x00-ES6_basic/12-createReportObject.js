@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 export default function createReportObject(employeesList) {
   const allEmployees = { ...employeesList };
 
