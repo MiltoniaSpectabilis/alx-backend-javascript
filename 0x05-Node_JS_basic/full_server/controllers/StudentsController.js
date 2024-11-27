@@ -3,7 +3,7 @@
 import { readDatabase } from '../utils';
 
 class StudentsController {
-  static getAllStudents(request, response) {
+  static getAllStudents(response) {
     readDatabase(process.argv[2])
       .then((data) => {
         let allStudents = 'This is the list of our students\n';
