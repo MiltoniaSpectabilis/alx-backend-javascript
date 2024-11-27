@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 
-const readDatabase = (filePath) => new Promise((resolve, reject) => {
+export const readDatabase = (filePath) => new Promise((resolve, reject) => {
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
       reject(new Error('Cannot load the database'));
@@ -21,14 +21,10 @@ const readDatabase = (filePath) => new Promise((resolve, reject) => {
       const result = {};
 
       fields.forEach((field) => {
-        result[field] = students
-          .filter((student) => student.field === field)
-          .map((student) => student.firstname);
+        result[field] = students.filter((student) => student.field === field).map((student) => student.firstname);
       });
 
       resolve(result);
     }
   });
 });
-
-export default readDatabase;
