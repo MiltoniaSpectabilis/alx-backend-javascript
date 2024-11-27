@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 class AppController {
-  static getHomepage(response) {
+  static getHomepage(request, response) {
     response.status(200).send('Hello Holberton School!');
   }
 }
